@@ -1,11 +1,14 @@
+# UFO Configuration File
+# Copy this file to config.yaml and fill in your API details
+
 HOST_AGENT: {
   VISUAL_MODE: True, # Whether to use the visual mode
   REASONING_MODEL: False, # Whether the model is reasoning model. For OpenAI o1, o3, o4-mini, this field must be set to True.
   API_TYPE: "openai" , # The API type, "openai" for the OpenAI API, "aoai" for the AOAI API, 'azure_ad' for the ad authority of the AOAI API.  
   API_BASE: "https://api.openai.com/v1/chat/completions", # The the OpenAI API endpoint, "https://api.openai.com/v1/chat/completions" for the OpenAI API.
-  API_KEY: "sk-",  # The OpenAI API key, begin with sk-
-  API_VERSION: "2025-02-01-preview", # "2024-02-15-preview" by default
-  API_MODEL: "gpt-4o",  # The only OpenAI model by now that accepts visual input
+  API_KEY: "YOUR_API_KEY_HERE",  # Replace with your OpenAI API key (starts with sk-)
+  API_VERSION: "2024-02-15-preview", # "2024-02-15-preview" by default
+  API_MODEL: "gpt-4-vision-preview",  # The only OpenAI model by now that accepts visual input
 
 
   ### Comment above and uncomment these if using "aoai".
@@ -27,9 +30,9 @@ APP_AGENT: {
   REASONING_MODEL: False, # Whether the model is reasoning model. For OpenAI o1, o3, o4-mini, this field must be set to True.
   API_TYPE: "openai" , # The API type, "openai" for the OpenAI API, "aoai" for the AOAI API, 'azure_ad' for the ad authority of the AOAI API.  
   API_BASE: "https://api.openai.com/v1/chat/completions", # The the OpenAI API endpoint, "https://api.openai.com/v1/chat/completions" for the OpenAI API.
-  API_KEY: "sk-",  # The OpenAI API key, begin with sk-
-  API_VERSION: "2025-02-01-preview", # "2024-02-15-preview" by default
-  API_MODEL: "gpt-4o",  # The only OpenAI model by now that accepts visual input
+  API_KEY: "YOUR_API_KEY_HERE",  # Replace with your OpenAI API key (starts with sk-)
+  API_VERSION: "2024-02-15-preview", # "2024-02-15-preview" by default
+  API_MODEL: "gpt-4-vision-preview",  # The only OpenAI model by now that accepts visual input
 
 
   ### Comment above and uncomment these if using "aoai".
@@ -52,9 +55,9 @@ EVALUATION_AGENT: {
   REASONING_MODEL: False, # Whether the model is reasoning model. For OpenAI o1, o3, o4-mini, this field must be set to True.
   API_TYPE: "openai" , # The API type, "openai" for the OpenAI API, "aoai" for the AOAI API, 'azure_ad' for the ad authority of the AOAI API.  
   API_BASE: "https://api.openai.com/v1/chat/completions", # The the OpenAI API endpoint, "https://api.openai.com/v1/chat/completions" for the OpenAI API.
-  API_KEY: "sk-",  # The OpenAI API key, begin with sk-
-  API_VERSION: "2025-02-01-preview", # "2024-02-15-preview" by default
-  API_MODEL: "gpt-4o",  # The only OpenAI model by now that accepts visual input
+  API_KEY: "YOUR_API_KEY_HERE",  # Replace with your OpenAI API key (starts with sk-)
+  API_VERSION: "2024-02-15-preview", # "2024-02-15-preview" by default
+  API_MODEL: "gpt-4-vision-preview",  # The only OpenAI model by now that accepts visual input
 
 
   ### Comment above and uncomment these if using "aoai".
@@ -76,7 +79,7 @@ BACKUP_AGENT: {
 
   API_TYPE: "openai" , # The API type, "openai" for the OpenAI API, "aoai" for the AOAI API, 'azure_ad' for the ad authority of the AOAI API.  
   API_BASE: "https://api.openai.com/v1/chat/completions", # The the OpenAI API endpoint, "https://api.openai.com/v1/chat/completions" for the OpenAI API.
-  API_KEY: "sk-",  # The OpenAI API key, begin with sk-
+  API_KEY: "YOUR_API_KEY_HERE",  # Replace with your OpenAI API key (starts with sk-)
   API_VERSION: "2024-02-15-preview", # "2024-02-15-preview" by default
   API_MODEL: "gpt-4-vision-preview",  # The only OpenAI model by now that accepts visual input
 

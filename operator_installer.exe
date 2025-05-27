@@ -1,0 +1,43 @@
+name: Build-Windows-Installer
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # 1) Install PS2EXE
+      - name: Install PS2EXE
+        shell: pwsh
+        run: Install-Module -Name ps2exe -Scope CurrentUser -Force
+
+      # 2) Bundle Python service + icon inside the EXE using PS2EXE
+      - name: Build operator_installer.exe
+        shell: pwsh
+        run: |
+          $extra = @(
+            "-addFile", "ufo\operator_service.py",
+            "-iconFile",  ".github\assets\ufo.ico"
+          )
+          Invoke-ps2exe .\ufo-installer\install.ps1 .\operator_installer.exe `
+              -noConsole -title "UFO Operator Setup" @extra
+
+      # 3) (Optional) Code-sign if you have a cert in Secrets
+      - name: Sign executable
+        if: secrets.CERT_PFX
+        shell: pwsh
+        run: |
+          $pfx = "$env:TEMP\code.pfx"
+          [IO.File]::WriteAllBytes($pfx, [Convert]::FromBase64String("${{ secrets.CERT_PFX }}"))
+          & "C:\Program Files (x86)\Windows Kits\10\App Certification Kit\signtool.exe" `
+            sign /f $pfx /p '${{ secrets.CERT_PASS }}' /fd SHA256 /tr http://timestamp.digicert.com `
+            /td SHA256 operator_installer.exe
+
+      # 4) Upload the installer artifact
+      - uses: actions/upload-artifact@v4
+        with:
+          name: operator_installer
+          path: operator_installer.exe

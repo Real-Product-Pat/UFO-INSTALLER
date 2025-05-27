@@ -1,9 +1,39 @@
 <!-- markdownlint-disable MD033 MD041 -->
-<h1 align="center">
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>UFO² - The Desktop AgentOS</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+    h1, h2, h3 { text-align: center; }
+    .btn { background-color: #4CAF50; color: white; border: none; padding: 10px 20px; cursor: pointer; margin: 10px; }
+    .btn:hover { background-color: #45a049; }
+    pre { background: #f4f4f4; padding: 10px; overflow-x: auto; }
+    ol { max-width: 600px; margin: auto; }
+  </style>
+  <script>
+    function copyCommand() {
+      var command = document.getElementById('installCommand').innerText;
+      navigator.clipboard.writeText(command);
+      alert('Command copied to clipboard!');
+    }
+    function openCLI() {
+      try {
+        // Attempt to open Windows Command Prompt.
+        // Note: This may not work on all browsers due to security restrictions.
+        window.location.href = "cmd://";
+      } catch (e) {
+        alert("Please open Command Prompt manually (Press Windows+R, type cmd, then hit Enter).");
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1 align="center">
   <b>UFO²</b> <img src="assets/ufo_blue.png" alt="UFO logo" width="40"> :&nbsp;The&nbsp;Desktop&nbsp;AgentOS
 </h1>
 <p align="center">
-  <em>Turn natural‑language requests into automatic, reliable, multi‑application workflows on Windows, beyond UI-Focused.</em>
+  <em>Turn natural‑language requests into automatic, reliable, multi‑application workflows on Windows, beyond UI‑Focused.</em>
 </p>
 
 
@@ -86,8 +116,26 @@ These sources provide insights into the evolving landscape of technology and the
 
 ---
 
-## 🚀 Three‑minute Quickstart
+## 🚀 **One‑Command Setup** ⚡
 
+**Want to get started in under 60 seconds?** Just run this in Command Prompt (Windows):
+
+```powershell
+curl -L https://raw.githubusercontent.com/microsoft/UFO/main/quick_install.bat -o quick_install.bat && quick_install.bat
+```
+
+This single command will:
+✅ Install Python (if needed)  
+✅ Clone the UFO repository  
+✅ Install all dependencies  
+✅ Create the config file  
+✅ Guide you through API key setup  
+
+**That's it!** 🎉
+
+---
+
+## 🚀 Manual Three‑minute Setup
 
 ### 🛠️ Step 1: Installation
 UFO requires **Python >= 3.10** running on **Windows OS >= 10**. It can be installed by running the following command:
