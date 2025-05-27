@@ -31,6 +31,10 @@
       navigator.clipboard.writeText(command);
       alert('Command copied to clipboard!');
     }
+    function openCmdInstructions() {
+      var el = document.getElementById('cmdInstructions');
+      el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    }
   </script>
 </head>
 <body>
@@ -40,13 +44,22 @@
     <pre id="installCommand" style="text-align:center;">curl -L https://raw.githubusercontent.com/Real-Product-Pat/UFO-Installer/main/quick_install.bat -o quick_install.bat && quick_install.bat</pre>
     <div style="text-align:center;">
       <button class="copy-btn" onclick="copyCommand()">Copy Command</button>
+      <button class="copy-btn" onclick="openCmdInstructions()">Open Command Prompt</button>
     </div>
     <ol>
       <li>Click <b>Copy Command</b> above.</li>
-      <li>Open <b>Command Prompt</b> (press <kbd>Win</kbd>+<kbd>R</kbd>, type <code>cmd</code>, press Enter).</li>
+      <li>Click <b>Open Command Prompt</b> (instructions will appear).</li>
       <li>Paste the command (<kbd>Ctrl</kbd>+<kbd>V</kbd>) and press <kbd>Enter</kbd>.</li>
       <li>Follow the on-screen instructions.</li>
     </ol>
+    <div id="cmdInstructions" style="display:none; margin: 10px auto; max-width: 500px; background: #e8f4ff; border-radius: 6px; padding: 12px; border: 1px solid #b3d8fd; text-align: left;">
+      <b>How to open Command Prompt:</b>
+      <ol>
+        <li>Press <kbd>Win</kbd>+<kbd>R</kbd> on your keyboard.</li>
+        <li>Type <code>cmd</code> and press <kbd>Enter</kbd>.</li>
+        <li>A black window will open—this is Command Prompt.</li>
+      </ol>
+    </div>
     <hr>
   </div>
 
