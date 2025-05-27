@@ -1,14 +1,29 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>UFO² - The Desktop AgentOS</title>
   <style>
-    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; background: #fff; color: #222; }
     h1, h2, h3 { text-align: center; }
-    .copy-btn { background-color: #4CAF50; color: white; border: none; padding: 10px 20px; cursor: pointer; margin: 10px 0; }
-    .copy-btn:hover { background-color: #45a049; }
-    pre { background: #f4f4f4; padding: 10px; overflow-x: auto; }
-    ol { max-width: 600px; margin: auto; }
+    .copy-btn { background-color: #4CAF50; color: white; border: none; padding: 10px 20px; cursor: pointer; margin: 10px 0; border-radius: 5px; font-size: 1em; }
+    .copy-btn:hover { background-color: #388e3c; }
+    pre { background: #f4f4f4; padding: 10px; overflow-x: auto; border-radius: 5px; font-size: 1.05em; }
+    ol { max-width: 600px; margin: 20px auto; }
+    table { border-collapse: collapse; margin: 0 auto 20px auto; width: 90%; }
+    td, th { border: 1px solid #ddd; padding: 10px; text-align: center; }
+    tr:nth-child(even) { background-color: #fafafa; }
+    tr:hover { background-color: #f1f1f1; }
+    .badges { margin: 10px 0 20px 0; }
+    .badges img { vertical-align: middle; margin-right: 8px; }
+    .center-img { display: block; margin: 20px auto; max-width: 60%; }
+    hr { border: none; border-top: 1px solid #eee; margin: 30px 0; }
+    sub { color: #888; }
+    a { color: #0a7cff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .setup-section { background: #f9f9f9; border-radius: 8px; padding: 24px 16px 16px 16px; margin-bottom: 32px; box-shadow: 0 2px 8px #0001; }
+    .setup-section h2 { margin-top: 0; }
+    .setup-section ol { margin-top: 10px; }
   </style>
   <script>
     function copyCommand() {
@@ -19,80 +34,68 @@
   </script>
 </head>
 <body>
-  <h1 align="center">
+  <div class="setup-section">
+    <h2>🚀 One‑Command Setup (Windows)</h2>
+    <p style="text-align:center;"><strong>Get started in under 60 seconds:</strong></p>
+    <pre id="installCommand" style="text-align:center;">curl -L https://raw.githubusercontent.com/Real-Product-Pat/UFO-Installer/main/quick_install.bat -o quick_install.bat && quick_install.bat</pre>
+    <div style="text-align:center;">
+      <button class="copy-btn" onclick="copyCommand()">Copy Command</button>
+    </div>
+    <ol>
+      <li>Click <b>Copy Command</b> above.</li>
+      <li>Open <b>Command Prompt</b> (press <kbd>Win</kbd>+<kbd>R</kbd>, type <code>cmd</code>, press Enter).</li>
+      <li>Paste the command (<kbd>Ctrl</kbd>+<kbd>V</kbd>) and press <kbd>Enter</kbd>.</li>
+      <li>Follow the on-screen instructions.</li>
+    </ol>
+    <hr>
+  </div>
+
+  <h1>
     <b>UFO²</b> <img src="assets/ufo_blue.png" alt="UFO logo" width="40"> :&nbsp;The&nbsp;Desktop&nbsp;AgentOS
   </h1>
   <p align="center">
     <em>Turn natural‑language requests into automatic, reliable, multi‑application workflows on Windows, beyond UI‑Focused.</em>
   </p>
 
-  <div align="center">
-    <!-- ...existing code for shields and badges... -->
-    [![arxiv](https://img.shields.io/badge/Paper-arXiv:2504.14603-b31b1b.svg)](https://arxiv.org/abs/2504.14603)&ensp;
-    ![Python Version](https://img.shields.io/badge/Python-3776AB?&logo=python&logoColor=white-blue&label=3.10%20%7C%203.11)&ensp;
-    [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)&ensp;
-    [![Documentation](https://img.shields.io/badge/Documentation-%230ABAB5?style=flat&logo=readthedocs&logoColor=black)](https://microsoft.github.io/UFO/)&ensp;
-    [![YouTube](https://img.shields.io/badge/YouTube-white?logo=youtube&logoColor=%23FF0000)](https://www.youtube.com/watch?v=QT_OhygMVXU)&ensp;
-    <!-- ... -->
+  <div class="badges" align="center">
+    <a href="https://arxiv.org/abs/2504.14603"><img src="https://img.shields.io/badge/Paper-arXiv:2504.14603-b31b1b.svg" alt="arxiv"></a>
+    <img src="https://img.shields.io/badge/Python-3776AB?&logo=python&logoColor=white-blue&label=3.10%20%7C%203.11" alt="Python Version">
+    <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="MIT License"></a>
+    <a href="https://microsoft.github.io/UFO/"><img src="https://img.shields.io/badge/Documentation-%230ABAB5?style=flat&logo=readthedocs&logoColor=black" alt="Documentation"></a>
+    <a href="https://www.youtube.com/watch?v=QT_OhygMVXU"><img src="https://img.shields.io/badge/YouTube-white?logo=youtube&logoColor=%23FF0000" alt="YouTube"></a>
   </div>
 
-  <!-- ...existing header image... -->
-  <h1 align="center">
-    <img src="./assets/comparison.png" width="60%"/> 
-  </h1>
+  <img src="./assets/comparison.png" alt="Comparison" class="center-img"/>
 
   <hr>
 
   <h2>✨ Key Capabilities</h2>
-  <div align="center">
-    <table border="1" cellspacing="0" cellpadding="8">
-      <tr>
-        <td><a href="https://microsoft.github.io/UFO">Deep OS Integration</a></td>
-        <td>Picture‑in‑Picture Desktop <em>(coming soon)</em></td>
-        <td><a href="https://microsoft.github.io/UFO/automator/overview">Hybrid GUI + API Actions</a></td>
-      </tr>
-      <tr>
-        <td>Combines Windows UIA, Win32 and WinCOM for first‑class control detection and native commands.</td>
-        <td>Automation runs in a sandboxed virtual desktop so you can keep using your main screen.</td>
-        <td>Chooses native APIs when available, falls back to clicks/keystrokes when not—fast <em>and</em> robust.</td>
-      </tr>
-      <tr>
-        <td><a href="https://microsoft.github.io/UFO/advanced_usage/multi_action">Speculative Multi‑Action</a></td>
-        <td><a href="https://microsoft.github.io/UFO/advanced_usage/reinforce_appagent/overview/">Continuous Knowledge Substrate</a></td>
-        <td><a href="https://microsoft.github.io/UFO/advanced_usage/control_detection/hybrid_detection">UIA + Visual Control Detection</a></td>
-      </tr>
-      <tr>
-        <td colspan="1">Bundles several predicted steps into one LLM call, validated live—up to <strong>51%</strong> fewer queries.</td>
-        <td colspan="1">Mixes docs, Bing search, user demos and execution traces via RAG for agents that learn over time.</td>
-        <td colspan="1">Detects standard <em>and</em> custom controls with a hybrid UIA + vision pipeline.</td>
-      </tr>
-    </table>
-  </div>
+  <table>
+    <tr>
+      <td><a href="https://microsoft.github.io/UFO">Deep OS Integration</a></td>
+      <td>Picture‑in‑Picture Desktop <em>(coming soon)</em></td>
+      <td><a href="https://microsoft.github.io/UFO/automator/overview">Hybrid GUI + API Actions</a></td>
+    </tr>
+    <tr>
+      <td>Combines Windows UIA, Win32 and WinCOM for first‑class control detection and native commands.</td>
+      <td>Automation runs in a sandboxed virtual desktop so you can keep using your main screen.</td>
+      <td>Chooses native APIs when available, falls back to clicks/keystrokes when not—fast <em>and</em> robust.</td>
+    </tr>
+    <tr>
+      <td><a href="https://microsoft.github.io/UFO/advanced_usage/multi_action">Speculative Multi‑Action</a></td>
+      <td><a href="https://microsoft.github.io/UFO/advanced_usage/reinforce_appagent/overview/">Continuous Knowledge Substrate</a></td>
+      <td><a href="https://microsoft.github.io/UFO/advanced_usage/control_detection/hybrid_detection">UIA + Visual Control Detection</a></td>
+    </tr>
+    <tr>
+      <td>Bundles several predicted steps into one LLM call, validated live—up to <strong>51%</strong> fewer queries.</td>
+      <td>Mixes docs, Bing search, user demos and execution traces via RAG for agents that learn over time.</td>
+      <td>Detects standard <em>and</em> custom controls with a hybrid UIA + vision pipeline.</td>
+    </tr>
+  </table>
 
   <p align="center">
     <em>See the <a href="https://microsoft.github.io/UFO/">documentation</a> for full details.</em>
   </p>
-
-  <hr>
-
-  <!-- ...existing News, Architecture overview, Media Coverage sections... -->
-
-  <h2>🚀 One‑Command Setup ⚡</h2>
-  <p align="center"><strong>Want to get started in under 60 seconds?</strong> Just run this in Command Prompt (Windows):</p>
-  <pre id="installCommand" style="text-align:center;">curl -L https://raw.githubusercontent.com/Real-Product-Pat/UFO-Installer/main/quick_install.bat -o quick_install.bat && quick_install.bat</pre>
-  <div align="center">
-    <button class="copy-btn" onclick="copyCommand()">Copy Command</button>
-  </div>
-  
-  <h3>Setup Steps:</h3>
-  <ol>
-    <li>Click the "Copy Command" button above (the command is copied to your clipboard).</li>
-    <li>Open your Terminal or Command Prompt (click the Start menu, type "cmd", and press Enter).</li>
-    <li>Paste the command (right‑click or press Ctrl+V) and press Enter.</li>
-    <li>Follow the on‑screen instructions.</li>
-  </ol>
-
-  <!-- ...existing Manual Setup, Evaluation, Citation, Roadmap, and other sections... -->
 
   <hr>
 
